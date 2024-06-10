@@ -71,6 +71,39 @@
         .bg-praga {
             background-color: lightcoral !important;
         }
+
+
+        iframe {
+            width: 100%;
+            height: 300px;
+        }
+
+        /* Hide all steps by default: */
+        .tab {
+            display: none;
+        }
+
+        /* Make circles that indicate the steps of the form: */
+        .step {
+            height: 30px;
+            width: 30px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        /* Mark the active step: */
+        .step.active {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #04AA6D;
+        }
     </style>
 </head>
 
@@ -86,16 +119,293 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                    <a class="nav-link" href="./regras.html">Regras</a>
-                </div>
-            </div>
         </div>
     </nav>
     <div class="container container-fluid bg-white bg-opacity-75">
-        <div class="container mt-5">
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+            <span class="step">4</span>
+            <span class="step">5</span>
+            <span class="step">6</span>
+            <br>
+            <br>
+            <button id="prevBtn" onclick="nextPrev(-1)" class="btn btn-secondary">Voltar</button>
+            <button id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary">Avançar</button>
+        </div>
+
+
+        <div class="tab container mt-5">
+            <h1>Apresentação</h1>
+            <div>
+                <p>
+                    Esta sequência didática gamificada aborda o uso de agrotóxicos e suas consequências, com o objetivo
+                    de ensinar os conceitos básicos sobre o tema.
+                    O conteúdo inclui uma introdução aos agrotóxicos, explorando como começaram e como são utilizados
+                    nas lavouras brasileiras, além de identificar os agrotóxicos mais comuns e suas aplicações em
+                    diferentes culturas.
+                    Serão discutidas as vantagens e desvantagens do uso de agrotóxicos, bem como uma comparação
+                    detalhada entre o cultivo com agrotóxicos e o cultivo orgânico, proporcionando uma compreensão ampla
+                    e crítica do assunto.
+                    <br>
+                    Essa sequência é organizada em seis passos que devem ser seguidos na ordem:
+                <ol>
+                    <li>Introdução: esta apresentação da sequência didática e como utilizá-la.</li>
+                    <li>Atividade no Kahoot: um quiz com perguntas e explicações sobre os temas aqui abordados (apresentação do professor).</li>
+                    <li>Vídeo com uma breve narrativa, crianco um contexto acerca do desafio a ser desenvolvido.</li>
+                    <li>Conjunto de regras da atividade que será desenvolvida (pode ser consultada a qualquer momento sem perda do progresso)</li>
+                    <li>Situação-problema: hora de colocar nossos conhecimentos em prática ao enfrentar uma
+                        situação-problema envolvendo o uso de agrotóxicos.</li>
+                    <li>Referências: bibliografia com os materiais utilizados na elaboração deste material.</li>
+                </ol>
+                <br>
+                <strong>Tudo pronto! Vamos lá?</strong>
+                <br><br>
+                Autores:
+
+            </div>
+        </div>
+        <div class="tab container mt-5">
+            <img src="https://bpb-us-w2.wpmucdn.com/sites.umassd.edu/dist/f/777/files/2023/05/kahoot-logo.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="tab container mt-5">
+            <iframe width="560" height="315" src="https://youtube.com/embed/Hg7ST78MnFo" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="tab container mt-5">
+            <h1>Negócios de Família</h1>
+            <h2 style="margin-top: 2%;">Distribuição de Pontos (Melhor de 3)</h2>
+            <p>
+            <ol>
+                <li><b>Atividade Kahoot (1 ponto)</b></li>
+                <li><b>Maximizar os lucros das culturas cultivadas no terreno (1 ponto)</b></li>
+                <ul>
+                    <li>Ganha o ponto da atividade quem obtiver maior lucro APÓS lançamento das pragas</li>
+                </ul>
+                <li><b>Distribuição e manejo das culturas (1 ponto)</b>
+                    <ul>
+                        <li>Ganha o ponto da atividade quem tiver maior diversidade de culturas e orgânicos</li>
+                        <li>Culturas: 1 a 8</li>
+                        <li>Orgânicos: 0 a 8</li>
+                    </ul>
+                </li>
+            </ol>
+            </p>
+            <h2>Regras</h2>
+            <p>
+                <b>Maximizar os lucros das culturas cultivadas no terreno (1 ponto): </b>
+                <br>A equipe que conseguir maior lucratividade, após “lançar pragas”,
+                ganha 1
+                ponto.
+            </p>
+            <p>
+                <b>Diversidade de culturas (1 ponto por cultura): </b>
+                <br>Cada cultura diferente utilizada concede 1 ponto à equipe
+                <br>Cada cultura ocupa no mínimo um hectare
+                <br>A equipe pode utilizar mais de um hectare por cultura
+                <br>A soma de todo o plantio deve ser no máximo dez hectares (tamanho da herança)
+            </p>
+            <p>
+                <b>Manejo sustentável / Cultivo Orgânico (1 ponto por cultura): </b>
+                <br>Cada cultura orgânica cultivada concede 1 ponto ao grupo
+            </p>
+            <p>
+                <b>Cuidado com a saúde (penalidade de até 10%) </b>
+                <br>Se mais da metade das culturas selecionadas forem convencionais (com uso de agrotóxico) o
+                jogador terá
+                penalidade de 10% em seu lucro final.
+                <br>Este valor corresponde ao dinheiro necessário para que o produtor cuide de sua saúde,
+                prejudicada pelo
+                uso excessivo de agrotóxicos.
+            </p>
+
+            <div class="container">
+                <h1>Tabela Comparativa</h1>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr class="align-middle">
+                            <th>Cultura</th>
+                            <th>Produção kg/ha (convencional)</th>
+                            <th>Produção kg/ha (orgânico)</th>
+                            <th>Venda/ha (convencional)</th>
+                            <th>Venda/ha (orgânico)</th>
+                            <th>Custo produção por hectare (convencional)</th>
+                            <th>Custo produção por hectare (orgânico)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linha 1 -->
+                        <tr>
+                            <td>Abóbora</td>
+                            <td>8500</td>
+                            <td>7323</td>
+                            <td>R$4.675,00</td>
+                            <td>R$5.638,71</td>
+                            <td>R$4.917,50</td>
+                            <td>R$3.595,85</td>
+                        </tr>
+                        <!-- Linha 2 -->
+                        <tr>
+                            <td>Alho</td>
+                            <td>6350</td>
+                            <td>6646</td>
+                            <td>R$23.698,50</td>
+                            <td>R$43.845,00</td>
+                            <td>R$17.874,55</td>
+                            <td>R$22.024,68</td>
+                        </tr>
+                        <!-- Linha 3 -->
+                        <tr>
+                            <td>Batata</td>
+                            <td>17411</td>
+                            <td>17201</td>
+                            <td>R$15.611,00</td>
+                            <td>R$33.266,16</td>
+                            <td>R$14.011,20</td>
+                            <td>R$15.861,70</td>
+                        </tr>
+                        <!-- Linha 4 -->
+                        <tr>
+                            <td>Cenoura</td>
+                            <td>28000</td>
+                            <td>23547</td>
+                            <td>R$21.000,00</td>
+                            <td>R$18.602,13</td>
+                            <td>R$20.011,72</td>
+                            <td>R$20.480,18</td>
+                        </tr>
+                        <!-- Linha 5 -->
+                        <tr>
+                            <td>Morango</td>
+                            <td>36000</td>
+                            <td>26251</td>
+                            <td>R$180.000,00</td>
+                            <td>R$175.881,70</td>
+                            <td>R$84.690,80</td>
+                            <td>R$67.819,20</td>
+                        </tr>
+                        <!-- Linha 6 -->
+                        <tr>
+                            <td>Pimentão </td>
+                            <td>30000</td>
+                            <td>22209</td>
+                            <td>R$30.300,00</td>
+                            <td>R$37.755,30</td>
+                            <td>R$32.996,00</td>
+                            <td>R$32.655,46</td>
+                        </tr>
+                        <!-- Linha 7 -->
+                        <tr>
+                            <td>Repolho</td>
+                            <td>47102</td>
+                            <td>56553</td>
+                            <td>R$14.601,62</td>
+                            <td>R$25.448,85</td>
+                            <td>R$14.096,00</td>
+                            <td>R$11.099,67</td>
+                        </tr>
+                        <!-- Linha 8 -->
+                        <tr>
+                            <td>Tomate</td>
+                            <td>68200</td>
+                            <td>38518</td>
+                            <td>R$57.288,00</td>
+                            <td>R$67.406,50</td>
+                            <td>R$43.732,40</td>
+                            <td>R$34.797,58</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center">Fonte: Souza e Garcia(2013)</p>
+            </div>
+
+
+            <h1>Pragas na Lavoura</h1>
+            <h3 style="margin: 2%;">Com o toque de um botão, você poderá causar prejuízos em um grupo adversário
+            </h3>
+            <h2 style="margin-top: 2%;">Regras</h2>
+            <p>
+            <ul>
+                <li>Ao apertar o botão será sorteada uma praga pra cada talhão do terreno</li>
+                <li>Existem 5 pragas: Mosca branca, Ácaro Rajado, Tripes, Pulgão e Tempo</li>
+                <li>A praga pode, ou não, afetar a cultura sorteada</li>
+                <li>
+                    <b>Caso a praga afete a cultura plantada ela irá ser mais ou menos eficiente da seguinte
+                        maneira:</b>
+                    <ul>
+                        <li>Pragas convencionais afetam culturas convencionais em 50%</li>
+                        <li>Pragas convencionais afetam culturas orgânicas em 100%</li>
+                        <li>Tempo e Pulgão afetam culturas convencionais em 100%</li>
+                        <li>Tempo e Pulgão afetam culturas orgânicas em 50%</li>
+                    </ul>
+
+                </li>
+            </ul>
+            </p>
+            <div class="container">
+                <h1>Culturas/Pragas</h1>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr class="align-middle">
+                            <th>Cultura</th>
+                            <th>Praga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linha 1 -->
+                        <tr>
+                            <td>Abóbora</td>
+                            <td>Ácaro Rajado</td>
+                        </tr>
+                        <!-- Linha 2 -->
+                        <tr>
+                            <td>Alho</td>
+                            <td>Tripes</td>
+                        </tr>
+                        <!-- Linha 3 -->
+                        <tr>
+                            <td>Batata</td>
+                            <td>Mosca branca</td>
+                        </tr>
+                        <!-- Linha 4 -->
+                        <tr>
+                            <td>Cenoura</td>
+                            <td>Mosca branca</td>
+                        </tr>
+                        <!-- Linha 5 -->
+                        <tr>
+                            <td>Morango</td>
+                            <td>Ácaro rajado</td>
+                        </tr>
+                        <!-- Linha 6 -->
+                        <tr>
+                            <td>Pimentão </td>
+                            <td>Ácaro rajado</td>
+                        </tr>
+                        <!-- Linha 7 -->
+                        <tr>
+                            <td>Repolho</td>
+                            <td>Mosca branca</td>
+                        </tr>
+                        <!-- Linha 8 -->
+                        <tr>
+                            <td>Tomate</td>
+                            <td>Tripes</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center">Fonte: Os autores(2024)</p>
+
+            </div>
+        </div>
+        <div class="tab container mt-5">
             <h1>Seleção de Culturas</h1>
             <table class="table table-bordered">
                 <tbody>
@@ -322,10 +632,189 @@
             <h4>ORGÂNICOS: <i id="qtd_organicos">0</i></h4>
             <button class="btn btn-primary" onclick="checkLucro()">Calcular Pontuação</button>
             <button class="btn btn-danger" onclick="lancarPragas()">Lançar Pragas</button>
+            <button class="btn btn-secondary" onclick="reiniciar()">Reiniciar</button>
         </div>
+
+        <div class="tab container mt-5">
+            <h1>Referências</h1>
+            <div>
+                <br>
+                <p>
+                    ARAÚJO, D. L. DE. O que é (e como faz) sequência didática? Entrepalavras, v. 3, n. 1, p.
+                    322–334, 31
+                    maio 2013.
+                    Disponível em: http://www.entrepalavras.ufc.br/revista/index.php/Revista/article/view/148>.
+                    Acesso
+                    em: 03 maio 2024.
+                    doi:http://dx.doi.org/10.22168/2237-6321.3.3.1.322-334.
+                </p>
+                <p>
+                    BRAGA, K. C.; BORGES, C. DA S.; BERTAGNOLLI, S. DE C. This Land is Mine!: relato de uma
+                    experiência
+                    gamificada na capacitação de professores em TDIC. #Tear: Revista de Educação, Ciência e
+                    Tecnologia,
+                    v. 9, n. 2, 8 dez. 2020.
+                </p>
+                <p>
+                    CÔRTES, M. A. et al. O Kahoot© como estratégia de aprendizagem no ensino de ciências
+                    morfofuncionais: uma revisão integrativa. Revista de Ciências Médicas e Biológicas, v. 21, n. 2,
+                    p.
+                    267–273, 31 out. 2022.
+                </p>
+                <p>
+                    DUARTE, C.; MONTOITO, R. LÓGICA SIMBÓLICA NO SMARTPHONE: PROCRIATIVANDO UM LIVRO DE LEWIS
+                    CARROLL
+                    NUM APLICATIVO. REAMEC - Rede Amazônica de Educação em Ciências e Matemática, v. 11, n. 1, p.
+                    e23101–e23101, 9 dez. 2023.
+                </p>
+                <p>
+                    FARDO, M. L. A GAMIFICAÇÃO APLICADA EM AMBIENTES DE APRENDIZAGEM. Revista Novas Tecnologias na
+                    Educação, v. 11, n. 1, 30 jul. 2013.
+                </p>
+                <p>
+                    KAPP, K.M. The Gamification of Learning and Instruction: Game-based Methods and Strategies for
+                    Training and Education, 2012
+                </p>
+                <p>
+                    KIELING, K. M. C. et al. Sequência Didática Gamificada: uma proposta para ensinar e aprender
+                    Bioquímica no Ensino Médio. Revista Insignare Scientia - RIS, v. 6, n. 6, p. 774–789, 28 dez.
+                    2023.
+                </p>
+                <p>
+                    LIMA, M. M. et al. UMA SEQUÊNCIA DIDÁTICA GAMIFICADA APLICADA AO ENSINO DE ÓPTICA GEOMÉTRICA.
+                    Conexões - Ciência e Tecnologia, v. 15, p. e021029–e021029, 26 nov. 2021.
+                    DOI: 10.21439/conexoes.v15i0.2088. Disponível em:
+                    https://conexoes.ifce.edu.br/index.php/conexoes/article/view/2088. Acesso em: 6 maio. 2024.
+                </p>
+                <p>
+                    OLIVEIRA, M.M. Sequência didática interativa no processo de formação de professores.
+                    Petrópolis, RJ: Vozes, 2013.
+                </p>
+                <p>
+                    SAMPAIO, D. B.; BERNARDINO, M. C. R. O uso de metodologias alternativas no ensino de
+                    Biblioteconomia: gamificação como estratégia pedagógica. Revista Brasileira de Educação em
+                    Ciência
+                    da Informação, v. 4, p. 100–117, 2017.
+                </p>
+                <p>
+                    SILVA, J. B. DA. GAMIFICAÇÃO NA SALA DE AULA: AVALIAÇÃO DA MOTIVAÇÃO UTILIZANDO O QUESTIONÁRIO
+                    ARCS.
+                    Revista Prática Docente, v. 5, n. 1, p. 374–390, 30 abr. 2020. DOI:
+                    10.23926/RPD.2526-2149.2020.v5.n1.p374-390.id632. Disponível em:
+                    https://periodicos.cfs.ifmt.edu.br/periodicos/index.php/rpd/article/view/495. Acesso em: 6 maio.
+                    2024.
+                </p>
+                <p>
+                    SOUZA, J. L. DE; GARCIA, R. D. C. CUSTOS E RENTABILIDADES NA PRODUÇÃO DE HORTALIÇAS ORGÂNICAS E
+                    CONVENCIONAIS NO ESTADO DO ESPÍRITO SANTO. Revista Brasileira de Agropecuária Sustentável, 1
+                    jul.
+                    2013.
+                </p>
+            </div>
+        </div>
+
+
     </div>
 
     <script>
+
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            // This function will display the specified tab of the form ...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            // ... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+                document.getElementById("nextBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").style.display = "none";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Avançar";
+            }
+            // ... and run a function that displays the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            // if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form... :
+            // if (currentTab >= x.length) {
+            //...the form gets submitted:
+            //   document.getElementById("regForm").submit();
+            //   return false;
+            // }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class to the current step:
+            x[n].className += " active";
+        }
+
+
+        function reiniciar() {
+
+            for (let i = 1; i <= 10; i++) {
+                const selectElement = document.getElementById(`cultura${i}`);
+
+                // Remove as classes de fundo existentes
+                selectElement.parentNode.classList.remove('bg-afeta');
+                selectElement.parentNode.classList.remove('bg-nao-afeta');
+                selectElement.selectedIndex = 0;
+
+                document.getElementById(`praga${i}`).innerText = "";
+
+                const cell = selectElement.parentElement;
+
+                const colorMap = {
+                    'Abóbora': 'bg-abobora',
+                    'Alho': 'bg-alho',
+                    'Batata': 'bg-batata',
+                    'Cenoura': 'bg-cenoura',
+                    'Morango': 'bg-morango',
+                    'Pimentão': 'bg-pimentao',
+                    'Repolho': 'bg-repolho',
+                    'Tomate': 'bg-tomate'
+                };
+
+                // Remove todas as classes de fundo
+                for (const key in colorMap) {
+                    cell.classList.remove(colorMap[key]);
+                }
+
+                let soma = 0;
+                formattedSoma = soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                document.getElementById("lucro").innerHTML = formattedSoma;
+
+                document.getElementById("qtd_culturas").innerHTML = 0;
+                document.getElementById("qtd_organicos").innerHTML = 0;
+
+
+            }
+        }
+
+
+
         function lancarPragas() {
             let c = [];
             let lucro = [];
@@ -405,6 +894,7 @@
             let lucro = [];
             let culturasSet = new Set();
             let organicosSet = new Set();
+            let convencionalSet = new Set();
 
             for (let i = 0; i < 10; i++) {
                 c[i] = document.getElementById(`cultura${i + 1}`).value;
@@ -413,6 +903,9 @@
 
                 if (c[i].endsWith('_o')) {
                     organicosSet.add(culturaBase); // Adiciona a cultura orgânica normalizada ao Set (duplicações são automaticamente ignoradas)
+                }
+                if (c[i].endsWith('_c')) {
+                    convencionalSet.add(culturaBase); // Adiciona a cultura convencional normalizada ao Set (duplicações são automaticamente ignoradas)
                 }
             }
 
@@ -444,6 +937,10 @@
                 const prejuizo = calcularPrejuizo(c[i], praga);
                 lucro[i] -= lucro[i] * prejuizo; // Aplica o prejuízo ao lucro
                 soma += lucro[i];
+            }
+            if (organicosSet.size < convencionalSet.size) {
+                soma = soma * 0.9;
+
             }
 
             const formattedSoma = soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
